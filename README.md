@@ -1,6 +1,6 @@
 # JavsScript-Exercise
 
-JavsScript Exercise problems from different soucres. 
+JavsScript Exercise problems from different soucres.
 
 PROBLEMS:
 
@@ -8,4 +8,8 @@ PROBLEMS:
     B) Only for active users,
     C) In accending order of age.
 
-2.
+2.  A) Examples explaining Null and undefined
+
+3.  A) How Hoisting works ?
+
+4.  A) Closers with explanation and examples.

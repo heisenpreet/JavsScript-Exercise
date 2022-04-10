@@ -1,7 +1,7 @@
 /*
 NEWTOPIC 
 .
-1. Write an fx to sort the array.
+1. Write an fx to sort the arrayn without mutataing the original array
 2. Sort arry of objects of author;s last name
 
 */
@@ -10,10 +10,12 @@ NEWTOPIC
 const arr = [3, 42, 25, 62, 2, 1, 3, 2];
 
 const sorted = (arr) => {
-  arr.sort((a, b) => a - b);
+  return arr.slice().sort((a, b) => a - b);
 };
-sorted(arr);
-console.log(arr);
+
+console.log(`orignal array ${arr}`);
+console.log(`sorted array ${sorted(arr)}`);
+console.log(`orignal array ${arr}`);
 
 //IMPORTANT sort mth mutates the original array
 

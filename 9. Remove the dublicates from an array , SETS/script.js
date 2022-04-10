@@ -14,3 +14,5 @@ console.log(newArr);
 //          newArr= set(arr);
 //      2. SECOND WE CONVERT THE SET INTO AN ARRAY WITH SPREAD OPERATOR
 //          newArr=[...set(arr)];
+
+

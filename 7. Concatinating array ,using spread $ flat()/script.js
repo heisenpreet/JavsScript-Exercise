@@ -15,3 +15,7 @@ console.log(arrConcat(arr1, arr2, arr3));
 console.log(arr1);
 
 //IMPORTANT PUSH OPERATION MUTATES THE ORIGINAL ARRAY , THUS USING THE SPREAD OR REST OPERATER IS BETTER APPORARDCH
+
+//flat(1) flat(2)  here 1 and 2 represents how deep will the nested will be opened
+
+//flatMap only penerates one level deep

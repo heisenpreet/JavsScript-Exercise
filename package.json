@@ -1,12 +1,13 @@
 {
-  "name": "Trillo",
+  "name": "Harry",
   "version": "1.0.0",
-  "description": "Trillo Web app",
+  "description": "JavaScript Exercise",
   "main": "script.js",
   "scripts": {
     "git:add": "git add .",
     "git:commit": "git commit -m \"v5\" ",
-    "git:push": "git push"
+    "git:push": "git push",
+    "build:css": "npm-run-all git:add git:commit git:push"
   },
   "author": "Harry",
   "license": "ISC",

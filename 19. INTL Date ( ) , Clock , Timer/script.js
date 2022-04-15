@@ -50,7 +50,7 @@ console.log(formatAmount);
 //CASE 3        TIMER
 
 const setTimer = (timer) => {
-  const countdown = setInterval(() => {
+  const tick = () => {
     const min = String(Math.floor(timer / 60)).padStart(2, 0);
     const sec = String(Math.floor(timer % 60)).padStart(2, 0);
 
@@ -61,6 +61,8 @@ const setTimer = (timer) => {
       output3.textContent = `${min}:${sec} TIMEOUT`;
       clearInterval(countdown);
     }
-  }, 1000);
+  };
+  tick();
+  const countdown = setInterval(tick, 1000);
 };
-setTimer(10); //setting the timmer in seconds
+setTimer(20); //setting the timmer in seconds

@@ -64,5 +64,11 @@ const setTimer = (timer) => {
   };
   tick();
   const countdown = setInterval(tick, 1000);
+
+  return countdown;
 };
+
+if (countdown) {
+  clearInterval(countdown);
+} //to clear the pervious timer
 setTimer(20); //setting the timmer in seconds

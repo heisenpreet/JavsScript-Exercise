@@ -59,3 +59,56 @@ h1.onmouseenter = function (e) {
 
 //this will remove the eventlistner which makes the funtion work only once
 h1.removeEventListener('mouseenter', alerth1);
+
+///////////////////////////////////////
+///////////////////////////////////////
+//CASE 3 Event propagation
+///////////////////////////////////////
+///////////////////////////////////////
+
+const randomInt = (max, min) =>
+  Math.floor(Math.random() * (max - min + 1) + min);
+
+const randomColor = () =>
+  `rgb(${randomInt(0, 255)},${randomInt(0, 255)},${randomInt(0, 255)})`;
+
+document.querySelector('.nav__link').addEventListener('click', function (e) {
+  this.style.backgroundColor = randomColor();
+  console.log(e.target);
+  console.log(e.currentTarget);
+  console.log(this);
+
+  // e.stopPropagation(); to stop the event propagtion right here
+});
+document.querySelector('.nav__links').addEventListener('click', function (e) {
+  this.style.backgroundColor = randomColor();
+  console.log(e.target);
+  console.log(e.currentTarget);
+  console.log(this);
+});
+document.querySelector('.nav').addEventListener('click', function (e) {
+  this.style.backgroundColor = randomColor();
+  console.log(e.target);
+  console.log(e.currentTarget);
+  console.log(this);
+});
+
+//IMPORTANT VALUE OF THIS AND CUURENT TARGET IS SAME
+//WHILE TARGET IS WHERE THE EVENT HAPPENED
+
+///////////////////////////////////////
+///////////////////////////////////////
+//CASE 4 capturing event
+///////////////////////////////////////
+///////////////////////////////////////
+
+document.querySelector('.nav').addEventListener(
+  'click',
+  function (e) {
+    this.style.backgroundColor = randomColor();
+    console.log(e.target);
+    console.log(e.currentTarget);
+    console.log(this);
+  },
+  true
+);

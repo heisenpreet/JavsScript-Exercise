@@ -1,6 +1,6 @@
 
 
-
+Resource:-https://forum.freecodecamp.org/t/freecodecamp-challenge-guide-restrict-possible-usernames/301363
 
 Code Explanation
 1)  ^ - start of input

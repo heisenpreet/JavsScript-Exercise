@@ -29,32 +29,35 @@ document.addEventListener('keydown', function (e) {
     closeModal();
   }
 });
+///////////////////////////////////////
+///////////////////////////////////////
+//LAZY loading images
+///////////////////////////////////////
+///////////////////////////////////////
 
-///////////////////////////////////////
-///////////////////////////////////////
-//Revealing elements on scroll , intersection API
-///////////////////////////////////////
-///////////////////////////////////////
-const allSection = document.querySelectorAll('.section');
+const imgTargets = document.querySelectorAll('img[data-src]'); //selcting img elements with data-src attribute only
 
-const revealSection = function (entries, observer) {
+const loadImg = function (entries, observe) {
   const [entry] = entries;
-  console.log(e);
 
-  //target is the section which is intersection , coming from allsection foreach loop
-
-  //
   if (!entry.isIntersecting) return;
 
-  entry.target.classList.remove('section--hidden');
+  //Replace the src with data-src
+  entry.target.src = entry.target.dataset.src;
+  //once the above command the completed we get a load event
+
+  entry.target.addEventListener('load', function () {
+    entry.target.classList.remove('lazy-img');
+    //removing the blur filter only oncce the high resolution image is done loading
+  });
+
+  observe.unobserve(entry.target);
 };
 
-const sectionObserver = new IntersectionObserver(revealSection, {
+const imgObserver = new IntersectionObserver(loadImg, {
   root: null,
-  threshold: 0.15,
+  threshold: 0,
+  rootMargin: '200px',
 });
 
-allSection.forEach(section => {
-  sectionObserver.observe(section);
-  section.classList.add('section--hidden');
-});
+imgTargets.forEach(img => imgObserver.observe(img));

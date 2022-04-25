@@ -29,3 +29,24 @@ document.addEventListener('keydown', function (e) {
     closeModal();
   }
 });
+///////////////////////////////////////
+///////////////////////////////////////
+//CASE  DOM LIFECYCLE EVENT
+///////////////////////////////////////
+///////////////////////////////////////
+//fireed once the html without the images is loaded
+document.addEventListener('DOMContentLoaded', function (e) {
+  console.log('HTML parsed and DOM tree built', e);
+});
+
+//fired when the emtire page is laoded along with the images
+window.addEventListener('load', function (e) {
+  console.log('page full loaded', e);
+});
+
+//fires before the user wnats to leave the page..
+window.addEventListener('beforeunload', function (e) {
+  e.preventDefault();
+  console.log(e);
+  e.returnValue = '';
+});

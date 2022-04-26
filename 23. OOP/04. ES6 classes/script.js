@@ -38,3 +38,24 @@ jessica.greet();
  * 3. Classes are executed in strict mode
  *
  */
+//example
+/**
+ *
+ */
+
+class Cars {
+  constructor(make, speed) {
+    this.make = make;
+    this.speed = speed;
+  }
+
+  set speed(speed) {
+    this._speed = speed + 10;
+  }
+  get speed() {
+    return this._speed;
+  }
+}
+const bens = new Cars('bens', 100);
+console.log(bens);
+console.log(bens.speed);

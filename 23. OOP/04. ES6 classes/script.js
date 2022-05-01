@@ -59,3 +59,5 @@ class Cars {
 const bens = new Cars('bens', 100);
 console.log(bens);
 console.log(bens.speed);
+
+//example
